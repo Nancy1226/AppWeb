@@ -2,7 +2,7 @@ import BodyPage from "../components/organism/BodyPage";
 function Cisterna() {
     return (
     <>
-        <BodyPage />
+        <BodyPage msn={"Nivel Agua Cisterna"} funcion={"funcion"} name={"Encender"}/>
     </> 
      );
 }

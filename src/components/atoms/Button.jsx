@@ -4,13 +4,17 @@ const StyledContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%; 
+    width: 100%;
+    @media (min-width: 1024px) {
+    display: flex;
+    width: 50%;
+    height: 80%;
+    } 
 `;
 
-const ContainerButton = styled.button`
+const ContainerButton = styled.div`
     width: 70%;
     height: 40%;
-    background: #71ACDF;
     border-radius: 10px;
     text-align: center;
     font-size: 1.5625rem;
@@ -19,13 +23,17 @@ const ContainerButton = styled.button`
     border: none;
     margin-top:4%;
     color: white;
+    @media (min-width: 1024px) {
+        color: black;
+        font-size: 1.2rem;
+    }
 `;  
 
-function Button({funcion, name}) {
+function Button({name}) {
     return ( 
     <>
     <StyledContainer>
-        <ContainerButton type="button" onClick={funcion}>{name}</ContainerButton>
+        <ContainerButton>{name}</ContainerButton>
     </StyledContainer>
     </> 
 );

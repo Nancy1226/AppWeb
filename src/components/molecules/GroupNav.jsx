@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import Image from "../atoms/Image";
+import { NavLink } from 'react-router-dom';
 import { images } from "../../images/images";
+import Image from "../atoms/Image";
 
 const StyledContainer = styled.div`
     display: flex;
@@ -8,40 +9,58 @@ const StyledContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 5%;
-    /* border: 4px solid rebeccapurple; */
     margin: 2% 0% 4% 0%;
-    /* gap: 20%; */
-  &:hover{
-   cursor: pointer;
-  }
-  @media (min-width: 1024px) {
-    width: 98vw;
-    height: 10vh;
-    /* position: relative; */
-    display: flex;
-    justify-content: space-around;
-    gap: 60%;
-  }
+    @media (min-width: 1024px) {
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 50px;
+        margin: 0%;
+        background-color: #CFE5F4;
+        gap: 80%;
+    }
 `;
 
 const StyledSubContainer = styled.div`
-    /* border: 4px solid black; */
     width: 22%;
     height: 35%;
     justify-content: center;
     align-items: center;
+    /* display: none; */
+
+    @media (min-width: 1024px) {
+        /* border: 4px solid black; */
+        width: auto;
+    }
+`;
+
+const StyledSpan = styled.span`
+         display: none;
+     @media (min-width: 1024px) {
+        display: flex;
+        font-size: 1.2rem;
+    }
 `;
 
 function GroupNav() {
     return ( 
     <>
-        <StyledContainer>
+    <StyledContainer>
+        
             <StyledSubContainer>
                  <Image src={images.homeIcon} name={"/"} />
+                 <NavLink to={"/Grafica"} className='nav' exact activeClassName="active">
+                        <StyledSpan className="text">Grafica</StyledSpan>
+                    </NavLink>
+
             </StyledSubContainer>
 
             <StyledSubContainer>
                 <Image src={images.graphIcon} name={"/"} />
+                <NavLink to={"/"} className='nav' exact activeClassName="active">
+                        <StyledSpan className="text">Salir</StyledSpan>
+                    </NavLink>
             </StyledSubContainer>
         </StyledContainer> 
 

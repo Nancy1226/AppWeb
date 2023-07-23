@@ -27,39 +27,59 @@ ul{
     /* border: 2px solid red; */
 } 
 
+.cirulos-chart{
+    width: 99%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12%;
+
+}
+
+@media (max-width: 758px){
+    .cirulos-chart{
+        margin-top: 4%;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid  wheat;
+        justify-content:space-evenly;
+        gap: 40px;
+    }
+
+}
+
 #sidebar .side-menu{
     display: flex;
     background-color: var(--color-gray);
     border-radius: 18px;
     width: 95%;
     height: 61px;
-    padding: 1% 4% 2% 1%;
-    gap: 40%;
+    padding: 1% 2% 2% 1%;
+    gap: 30%;
     align-items:center;
     justify-content:center;
-    /* border: 2px solid rebeccapurple; */
 }
 
 #sidebar .side-menu li .nav .text{ 
     color: #5F5F5F;
-    font-family: Inter;
+    font-family: Arial;
     font-size: 18px;
     font-style: normal;
-    font-weight: 800;
+    font-weight: 80;
     line-height: normal;
     
 } 
 
 
 #sidebar .side-menu li a.active{
-    /* border: 2px solid orange; */
-    padding-top: 31%;
-    padding-bottom: 32%;
-    padding-left: 40%;
-    padding-right: 40%;
+    padding-top: 25%;
+    padding-bottom: 25%;
+    padding-left: 20%;
+    padding-right: 20%;
     border-radius: 7%;
     background: #FFF;
-
 }
 
 #sidebar .side-menu li a.active .text{
@@ -70,4 +90,41 @@ ul{
 .nav{
     /* margin-right: 2%; */
     text-decoration: none;
+}
+
+@media (min-width: 758px){
+    #siderbar{
+        height: 100%; 
+        width: 100%;
+    }
+    #sidebar .side-menu{
+        display: flex;
+        background-color: var(--color-gray);
+        border-radius: 18px;
+        width: 30%;
+        height: 50px;
+        margin: 2%;
+        padding: 0%;
+        justify-content:center;
+        align-items:center;
+        /* display: none; */
+    }
+    
+    #sidebar .side-menu li .nav .text{ 
+        width: auto;
+        font-size:0.9rem;
+    }
+
+    #sidebar .side-menu li a.active{
+        background: #FFF;
+        padding-left: 35%;
+        padding-right: 35%;
+        padding-top: 18%;
+        padding-bottom: 18%;
+        border-radius: 0.625rem;
+    }
+    
+    #sidebar .side-menu li a.active .text{
+        color: #006ECE;
+    }
 }

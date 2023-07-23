@@ -1,10 +1,10 @@
 import BodyPage from "../components/organism/BodyPage";
 
+
 function Rotoplas() {
     return ( 
     <>
-    
-        <BodyPage />
+        <BodyPage msn={"Nivel Agua Rotoplas"} funcion={"funcion"} name={"Status: Encendido"}/>
     </> 
     );
 }
