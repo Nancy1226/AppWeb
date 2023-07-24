@@ -79,75 +79,7 @@ const StyledContainerIlustracion = styled.div` //movil
   `
 
 function FormRegister() {
-  // const endpoint = "http://54.174.82.8/Mecasoft/create";
   
-  const form = useRef();
-  const navigate = useNavigate();
-
-  const clickHandler = (e) => {
-    e.preventDefault();
-    const newForm = new FormData(form.current);
-
-    if (
-      newForm.get("name") === null ||
-      newForm.get("name_users") === null ||
-      newForm.get("email") === null ||
-      newForm.get("matricula") === null ||
-      newForm.get("password") === null ||
-      newForm.get("confirmpassword") === null
-    ) {
-      
-      alert("campos vacios");
-    } else {
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-      myHeaders.append("Accept", "application/json");
-
-      // var raw = JSON.stringify({
-      //   name: "Pozo",
-      //   name_users: "Alan",
-      //   email: "alan@gmail.com",
-      //   matricula: "221230",
-      //   password: "alan22",
-      //   confirmpassword: "alan22",
-      // });
-
-      var raw = JSON.stringify({
-
-        name: newForm.get("name"),
-        name_users: newForm.get("name_users"),
-        email: newForm.get("email"),
-        matricula: newForm.get("matricula"),
-        password: newForm.get("password"),
-        confirmpassword: newForm.get("confirmpassword"),
-
-
-      });
-
-      var requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw ,
-        redirect: "follow",
-      };
-
-      fetch("http://54.174.82.8/Mecasoft/create", requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.log("error", error));
-      
-     //Codigo borrado
-
-     Swal({
-      title: '¡Felicidades! ' ,
-      text: 'Registro exitoso.',
-      icon: 'success',
-    });
-
-    navigate("/HomeAdmin");
-    }
-  };
-
   return (
     <>
       <Img src={images.regresarIcon} name={"/HomeAdmin"} />
