@@ -85,7 +85,7 @@ function FormRegister() {
       <Img src={images.regresarIcon} name={"/HomeAdmin"} />
       <StyledContainer>
         <StyledContainerForm>
-          <form ref={form}>
+          <form>
             <Titulo msn={"Registrar usuario"} />
             <GroupInput
               type={"text"}

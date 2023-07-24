@@ -15,6 +15,7 @@ function Rotoplas() {
     
         
     }, []);    
+    
     socket.on('message', (message) => {
         console.log(message)
         setMessages([...messages, message]);
