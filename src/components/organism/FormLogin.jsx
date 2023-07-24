@@ -87,7 +87,7 @@ function FormLogin() {
       <StyledContainer>
       
         <StyledContainerForm>
-          <form ref={Form}>
+          <form>
             <Titulo msn={"AquaTech"} />
             <GroupInput
               type={"text"}
@@ -116,7 +116,7 @@ function FormLogin() {
             <Button1
               name={"Iniciar sesion"}
               estilo={false}
-              funcion={handlerClick}
+              funcion={"funcion"}
             />
             </StyledButton>
             </StyledWrapperButton>

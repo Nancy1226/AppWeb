@@ -113,7 +113,7 @@ function FormRegister() {
             <StyledContainerB>
               <StyledContainerBtn>
                 <Button1
-                  funcion={clickHandler}
+                  funcion={"funcion"}
                   name={"Registrar"}
                   estilo={true}
                 />
