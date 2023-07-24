@@ -42,12 +42,12 @@ const ContainerCirculo = styled.div`
         justify-content: center;
     }`; 
     
-function CirculoChart() {
+function CirculoChart({number}) {
       return (
           <>
             <ContainerCirculo>
                 <div className='porcentaje'>
-                    <h1>70%</h1>
+                    <h1>{number}</h1>
                 </div>
                 <div className='circulo_v2'>
                      

@@ -43,7 +43,7 @@ const StyledButton = styled.div`
     `;
 
 
-function BodyPage({msn, name}) {
+function BodyPageCisterna({msn, name, number}) {
     return ( 
     <>
         <GroupNav />  
@@ -54,7 +54,7 @@ function BodyPage({msn, name}) {
 
           <div className="cirulos-chart">
             <div>
-              <CirculoChart/>
+              <CirculoChart number={number} />
             </div>
          <StyledButton>
                <Button name={name} />
@@ -65,4 +65,4 @@ function BodyPage({msn, name}) {
      );
 }
 
-export default BodyPage;
+export default BodyPageCisterna;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BodyPage from "../components/organism/BodyPage";
+import BodyPage from "../components/organism/BodyPageRotoplas";
 import GroupNav from "../components/molecules/GroupNav";
 import GroupOption from "../components/molecules/GroupOption";
 
