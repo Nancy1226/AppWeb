@@ -6,7 +6,7 @@ function GroupOption() {
         <>
 
 <section id="sidebar">
-    <div className="side-menu top">    
+    <div className="side-menu-top">    
                 <li>
                     <NavLink to={"/Rotoplas"} className='nav' exact activeClassName="active">
                         <span className="text">Rotoplas</span>

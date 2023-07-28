@@ -1,8 +1,12 @@
-import React from 'react'
 import styled from 'styled-components';
-import agua from '../../assets/Agua.svg'
+import agua from '../../assets/Agua.svg';
 
-
+const StyledH1 = styled.h1`
+        font-size: 40px;
+        margin: 0 auto;
+        z-index: 1000;
+        color: #fff;
+`; 
 
 const ContainerCirculo = styled.div`
     position: relative;
@@ -11,7 +15,7 @@ const ContainerCirculo = styled.div`
     border-radius: 50%;
     background-color: #006ECE;
     z-index: 1;
-    
+
     .circulo_v2{
         position: absolute;
         bottom: 0;
@@ -23,12 +27,11 @@ const ContainerCirculo = styled.div`
         z-index: 3;
     }
     .porcentaje{
-        font-family: sans-serif;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 50px;
+        font-size: 40px;
         margin: 0 auto;
         z-index: 1000;
         color: #fff;
@@ -41,6 +44,8 @@ const ContainerCirculo = styled.div`
         align-items: center;
         justify-content: center;
     }`; 
+
+
     
 function CirculoChart({number}) {
       return (
