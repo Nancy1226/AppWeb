@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const StyledContainer = styled.div`
+    margin-top: 8%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,13 +40,13 @@ const StyledH2 = styled.h2`
     }
 `;
 
-function Grafica() {
+function GraficaCisterna() {
   const [data, setData] = useState([]);
   
   useEffect(() => {
     async function fetchData() {
 
-       let res= await axios.get("http://44.207.54.43:4000/api/rotoplas/getAll");
+       let res= await axios.get("http://44.207.54.43:4000/api/cisterna/getAll");
        //console.log(res.data)
        setData(res.data.data)
        console.log("IMPRIMINENDO :"+data)
@@ -61,7 +62,7 @@ function Grafica() {
         <GroupNav /> 
         <GroupOption />
         <StyledContainer>
-            <StyledH2>Nivel de agua Rotoplas</StyledH2>
+            <StyledH2>Nivel de agua Cisterna</StyledH2>
       
             <StyledContainerTable>
             <Styled>
@@ -87,12 +88,9 @@ function Grafica() {
               </div>
             </Styled>
           </StyledContainerTable>
-        </StyledContainer>
-        
-        
-                  
+        </StyledContainer>                
     </>
      );
 }
 
-export default Grafica;
+export default GraficaCisterna;

@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
     align-items: center;
     width: 100%;
     height: 5%;
-    margin: 2% 0% 4% 0%;
+    margin: 2% 0% 8% 0%;
     @media (min-width: 1024px) {
         /* border: 2px solid red; */
         display: flex;
@@ -18,7 +18,7 @@ const StyledContainer = styled.div`
         height: 50px;
         margin: 0%;
         background-color: #CFE5F4;
-        gap: 80%;
+        gap: 35%;
     }
 `;
 
@@ -47,17 +47,22 @@ function GroupNav() {
     return ( 
     <>
     <StyledContainer>
-        
             <StyledSubContainer>
-                 <Image src={images.homeIcon} name={"/"} />
+                 <Image src={images.graphIcon} name={"/Grafica"} />
                  <NavLink to={"/Grafica"} className='nav' exact activeClassName="active">
-                        <StyledSpan className="text">Grafica</StyledSpan>
+                        <StyledSpan className="text">Historial Rotoplas</StyledSpan>
                     </NavLink>
-
             </StyledSubContainer>
 
             <StyledSubContainer>
-                <Image src={images.graphIcon} name={"/"} />
+                 <Image src={images.graphIcon} name={"/GraficaCisterna"} />
+                 <NavLink to={"/GraficaCisterna"} className='nav' exact activeClassName="active">
+                        <StyledSpan className="text">Historial Cisterna</StyledSpan>
+                    </NavLink>
+            </StyledSubContainer>         
+
+            <StyledSubContainer>
+                <Image src={images.homeIcon} name={"/"} />
                 <NavLink to={"/"} className='nav' exact activeClassName="active">
                         <StyledSpan className="text">Salir</StyledSpan>
                     </NavLink>

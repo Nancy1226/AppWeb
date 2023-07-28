@@ -21,7 +21,7 @@ const StyledContainerInputs = styled.div`
     font-family: 'Fenix';
     font-style: normal;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.2rem;
     line-height: 2%;
     text-align: justify;
     }
@@ -37,7 +37,7 @@ const StyledInput= styled.input`
     outline: none;
 
     @media (min-width: 1024px){
-        width:${props => props.tamanio ?  '72%' : '55%'};
+        width:${props => props.tamanio ?  '72%' : '72%'};
     }
 
 `;

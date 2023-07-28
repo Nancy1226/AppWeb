@@ -9,7 +9,7 @@ import styled from "styled-components";
 import Titulo from "../atoms/Titulo";
 import Icon from "../atoms/Icon";
 import Swal from 'sweetalert';
-import {useDispatch} from 'react-redux';
+import axios from "axios";
 
 const StyledContainer = styled.div` //movil
   display: flex;
@@ -82,23 +82,38 @@ const StyledWrapperButton = styled.div`
 `;
 function FormLogin() {
 
+  const form = useRef();
+  const navigate = useNavigate();
+
+  const handlerClick = async() => {
+
+    const newForm = new FormData(form.current);
+    let objectFront={
+       email : newForm.get("email"),
+       password : newForm.get("password")
+    }
+    console.log(objectFront)
+    let response = await axios.post("http://44.207.54.43:4000/api/user/login",objectFront)
+    console.log(response.status)
+    if(response.status === 200 ){
+      navigate("/Rotoplas");
+    }
+    if(response.status != 200){
+        alert("Error")
+  }
+};
+
   return (
     <>
       <StyledContainer>
       
         <StyledContainerForm>
-          <form>
+        <form ref={form}>
             <Titulo msn={"AquaTech"} />
             <GroupInput
               type={"text"}
-              placeholder={"Usuario"}
-              nombre={"name_users"}
-              
-            />
-            <GroupInput
-              type={"text"}
               placeholder={"Correo"}
-              nombre={"password"}
+              nombre={"email"}
             />
 
             <GroupInput
@@ -116,7 +131,7 @@ function FormLogin() {
             <Button1
               name={"Iniciar sesion"}
               estilo={false}
-              funcion={"funcion"}
+              funcion={handlerClick}
             />
             </StyledButton>
             </StyledWrapperButton>

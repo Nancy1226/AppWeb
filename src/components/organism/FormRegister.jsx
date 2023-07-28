@@ -34,8 +34,6 @@ const StyledContainerForm = styled.div`
 
   @media (min-width: 1024px) {
     //compu
-    /* border: 4px solid red; */
-    /* padding: 80px 30px; */
     padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
@@ -79,13 +77,61 @@ const StyledContainerIlustracion = styled.div` //movil
   `
 
 function FormRegister() {
+  const endpoint = "http://44.207.54.43:4000/api/user/registro";
+  
+  const form = useRef();
+  const navigate = useNavigate();
+
+  const clickHandler = (e) => {
+    e.preventDefault();
+    const newForm = new FormData(form.current);
+
+    if (
+      newForm.get("name") === null ||
+      newForm.get("email") === null ||
+      newForm.get("password") === null
+    ) {
+      
+      alert("campos vacios");
+    } else {
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      myHeaders.append("Accept", "application/json");
+
+      var raw = JSON.stringify({
+        name: newForm.get("name"),
+        email: newForm.get("email"),
+        password: newForm.get("password"),
+      });
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw ,
+        redirect: "follow",
+      };
+
+      fetch("http://44.207.54.43:4000/api/user/registro", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
+     Swal({
+      title: '¡Felicidades! ' ,
+      text: 'Registro exitoso.',
+      icon: 'success',
+    });
+
+    navigate("/Rotoplas");
+    }
+  };
+
   
   return (
     <>
       <Img src={images.regresarIcon} name={"/HomeAdmin"} />
       <StyledContainer>
         <StyledContainerForm>
-          <form>
+          <form ref={form}>
             <Titulo msn={"Registrar usuario"} />
             <GroupInput
               type={"text"}
@@ -104,16 +150,11 @@ function FormRegister() {
               placeholder={"Contraseña"}
               nombre={"password"}
             />
-            <GroupInput
-              type={"password"}
-              placeholder={"Confirmar contraseña"}
-              nombre={"confirmpassword"}
-            />
 
             <StyledContainerB>
               <StyledContainerBtn>
                 <Button1
-                  funcion={"funcion"}
+                  funcion={clickHandler}
                   name={"Registrar"}
                   estilo={true}
                 />
@@ -123,8 +164,6 @@ function FormRegister() {
         </StyledContainerForm>
 
         <StyledContainerIlustracion>
-          {/* <Icon src={images.foto2} />
-           <Icon src={images.foto3} /> */}
             <Icon src={images.foto} />
         </StyledContainerIlustracion> 
       </StyledContainer>
